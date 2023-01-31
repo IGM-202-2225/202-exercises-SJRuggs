@@ -14,7 +14,7 @@ public class Week2Demo : MonoBehaviour
         for (int i = 0; i > someNum; i++)
         {
             // Create copy
-            Instantiate(flowerManPrefab);
+            Instantiate(flowerManPrefab, new Vector3(i * 20, 0, 0), new Quaternion());
         }
     }
 
