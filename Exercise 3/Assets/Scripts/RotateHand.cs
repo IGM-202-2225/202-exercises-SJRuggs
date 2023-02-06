@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class RotateHand : MonoBehaviour
 {
-    public GameObject hand;
 
     // the amount to turn the hand every frame in degrees
     private float turnAmount;
 
     // toggles between uysing Time.deltaTime and not
-    private bool useDeltaTime;
+    public bool useDeltaTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        turnAmount = Mathf.PI;
-        useDeltaTime = true;
-        hand = GameObject.Find("minutehand");
+        turnAmount = 2 * Mathf.PI;
     }
 
     // Update is called once per frame
@@ -25,11 +22,11 @@ public class RotateHand : MonoBehaviour
     {
         if (useDeltaTime)
         {
-            hand.transform.Rotate(0.0f, 0.0f, -1 * turnAmount * Time.deltaTime, Space.Self);
+            gameObject.transform.Rotate(0.0f, 0.0f, -1 * turnAmount * Time.deltaTime, Space.Self);
         }
         else
         {
-            hand.transform.Rotate(0.0f, 0.0f, -1 * turnAmount, Space.Self);
+            gameObject.transform.Rotate(0.0f, 0.0f, -1 * turnAmount, Space.Self);
         }
     }
 }
